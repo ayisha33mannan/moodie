@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODIE</title>
+    <!-- style sheet link -->
+    <link rel="stylesheet" href="style.css">
+     <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <main>
+        <h1>Moodie Mood Mood</h1>
+        <p>How are you feeling today?</p>
+        <!-- buttons -->
+        <div class="btn" id="btns">
+            <button  data-mood="sad" id="category">Sad</button>
+            <button data-mood="happy" id="category">Happy / Romantic</button>
+            <button data-mood="energetic" id="category">Energetic</button>
+            <button data-mood="relaxed" id="category">Relaxed</button>
+        </div>
+        <!-- audio player section -->
+        <div class="audio-player">
+            <button id="prev"><i class="fa-solid fa-angles-left"></i></button>
+            <button id="play"><i class="fa-solid fa-play"></i></button>
+            <button id="next"><i class="fa-solid fa-angles-right"></i></button>
+
+            <input type="range" id="progress" value="0" step="1" />
+
+            <p id="now-playing">No song playing</p>
+
+            <audio id="audio"></audio>
+        </div>  
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
