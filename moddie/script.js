@@ -1,11 +1,14 @@
-const audio = document.getElementById('audio');
-const playBtn = document.getElementById('play');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const progress = document.getElementById('progress');
-const nowPlaying = document.getElementById('now-playing');
+// variables
+const audio = document.querySelector('#audio');
+const playBtn = document.querySelector('#play');
+const prevBtn = document.querySelector('#prev');
+const nextBtn = document.querySelector('#next');
+const progress = document.querySelector('#progress');
+const nowPlaying = document.querySelector('#now-playing');
 const moodButtons = document.querySelectorAll('[data-mood]');
-// Mood → Array of 2 songs each ( from pixabay.com )
+const body = document.body;
+
+// mood → array of 2 songs each ( from pixabay.com )
 const moodLibrary = {
     sad: ['songs/sad1.mp3', 'songs/sad-drama.mp3'],
     happy: ['songs/happy-cook.mp3', 'songs/happy-kids.mp3'],
@@ -13,11 +16,12 @@ const moodLibrary = {
     relaxed: ['songs/relax.mp3', 'songs/calm-bird.mp3']
 };
 
+// holder
 let currentMood = null;
 let currentSongIndex = 0;
 let isPlaying = false;
 
-// Play a song from the current mood
+// play a song from the current mood
 const playSong = () => {
     const songList = moodLibrary[currentMood];
     const song = songList[currentSongIndex];
@@ -31,7 +35,7 @@ const playSong = () => {
     nowPlaying.textContent = `${currentMood.toUpperCase()} - Song No. ${currentSongIndex + 1}`;
 };
 
-// Handle mood button click
+// handle mood button click
 moodButtons.forEach(btn => {
     btn.addEventListener('click', () => {
     currentMood = btn.dataset.mood;
@@ -41,7 +45,7 @@ moodButtons.forEach(btn => {
     });
 });
 
-// Play/pause toggle
+// play/pause toggle
 playBtn.addEventListener('click', () => {
     if (!audio.src) return;
     
@@ -55,7 +59,7 @@ playBtn.addEventListener('click', () => {
     isPlaying = !isPlaying;
 });
 
-// Previous song in current mood
+// previous song in current mood
 prevBtn.addEventListener('click', () => {
     if (!currentMood) return;
     
@@ -63,7 +67,7 @@ prevBtn.addEventListener('click', () => {
     playSong();
 });
 
-// Next song in current mood
+// next song in current mood
 nextBtn.addEventListener('click', () => {
     if (!currentMood) return;
 
@@ -71,34 +75,71 @@ nextBtn.addEventListener('click', () => {
     playSong();
 });
 
-// Progress bar update
+// progress bar update
 audio.addEventListener('timeupdate', () => {
     const value = (audio.currentTime / audio.duration) * 100;
     progress.value = value || 0;
 });
 
-// Seek when user drags progress bar
+// seek when user drags progress bar
 progress.addEventListener('input', () => {
     if (audio.duration) {
         audio.currentTime = (progress.value / 100) * audio.duration;
     }
 });
-//background change 
+// background change 
 const colorChange = () => {
     if (!currentMood) return;
-    
-    if (currentMood === "sad") {
-        body.style.backgroundColor ="#ff5252";
+
+    // variables
+    const heading = document.querySelector("h1");
+    const quest = document.querySelector("#quest "); 
+
+    // Mood-based themes
+    let theme = {
+        background: "#FAF9EE",
+        button: "#DCCFC0",
+        text: "#000"
+    };
+
+    switch (currentMood) {
+        case "sad":
+            theme = {
+                background: "#2C3E50",     // Dark Blue/Grey
+                button: "#4e6175ff",        // Lighter Dark Blue
+                text: "#ECF0F1"           // Light Text
+            };
+            break;
+        case "happy":
+            theme = {
+                background: "#FFE3E1",     // Light Pink
+                button: "#fdbbcaff",        // Pink buttons
+                text: "#800020"           // Burgundy
+            };
+            break;
+        case "energetic":
+            theme = {
+                background: "#FFF3B0",     // Light Yellow
+                button: "#F9C80E",        // Yellow buttons
+                text: "#5D2E8C"           // Purple
+            };
+            break;
+        case "relaxed":
+            theme = {
+                background: "#C8E6C9",     // Light green
+                button: "#9fd5a1ff",        // Softer green
+                text: "#2E7D32"           // Deep green
+            };
+            break;
     }
-    else if (currentMood === "relaxed"){
-        body.style.backgroundColor = "#7ab651";
-    }
-    else if (currentMood === "energetic"){
-        body.style.backgroundColor ="#00161e";
-    }
-    else if (currentMood === "happy"){
-        body.style.backgroundColor = "#b70868";
-    }
-    else  {
-        body.style.backgroundColor =" #FAF9EE"};
-}
+
+    // Apply theme
+    document.body.style.backgroundColor = theme.background;
+    heading.style.color = theme.text;
+    quest.style.color = theme.text;
+
+    moodButtons.forEach(btn => {
+        btn.style.backgroundColor = theme.button;
+        btn.style.color = theme.text;
+    });
+};
