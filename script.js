@@ -8,7 +8,7 @@ const nowPlaying = document.querySelector('#now-playing');
 const moodButtons = document.querySelectorAll('[data-mood]');
 const body = document.body;
 
-// mood → array of 2 songs each ( from pixabay.com )
+// mood → array of 2 songs each
 const moodLibrary = {
     sad: ['songs/sad1.mp3', 'songs/sad-drama.mp3'],
     happy: ['songs/happy-cook.mp3', 'songs/happy-kids.mp3'],
