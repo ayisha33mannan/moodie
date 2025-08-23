@@ -1,0 +1,78 @@
+/* basic setup */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    overflow-x: hidden;
+    overflow-y : hidden;
+}
+
+/* background + basic setup */
+body{ 
+    background-color: #FAF9EE;
+    text-align: center;
+    margin: 5%;
+}
+
+/* heading  */
+h1{
+    color: #A2AF9B;
+    font-size: 96px;
+    padding: 20px;
+}
+
+/* question part  */
+p{
+    font-size: 36px;
+    padding: 20px;
+}
+
+/* mood buttons  */
+.btn{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    button{
+        flex: 1;
+    padding:  20px;
+    font-size: 16px;
+    background-color: #DCCFC0;
+    border: none;
+    }
+}
+
+
+/* audio player section */
+.audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+ /* audio player buttons + bar*/
+ #now-playing{
+    font-size: 16px;
+    padding: 20px 0 10px 0;
+    margin-left: -144px;
+    font-weight: 50;
+}
+.audio-player button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 20px 0 20px ;
+}
+#audio {
+    display: none; 
+}
+/* progress bar  */
+#audio-player #progress {
+    flex: 1;
+    height: 5px;
+    cursor: pointer;
+}
+
