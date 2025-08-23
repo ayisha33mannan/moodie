@@ -138,7 +138,7 @@ const colorChange = () => {
     heading.style.color = theme.text;
     quest.style.color = theme.text;
 
-    // Apply theme on buttons 
+    // Apply theme on buttons   
     moodButtons.forEach(btn => {
         btn.style.backgroundColor = theme.button;
         btn.style.color = theme.text;
