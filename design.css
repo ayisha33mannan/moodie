@@ -1,0 +1,51 @@
+/* Define Variables */
+@media (max-width: 975px) and (min-width: 760px) {
+  h1 {
+    font-size: 72px;
+    padding: 0px;
+  }
+  p {
+    font-size: 28px;
+  }
+  .btn button {
+    padding: 14px;
+  }
+}
+@media (max-width: 760px) and (min-width: 500px) {
+  h1 {
+    font-size: 48px;
+    padding: 16px;
+  }
+  p {
+    font-size: 28px;
+    padding: 0px;
+  }
+  .btn button {
+    padding: 12px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 32px;
+    padding: 16px;
+  }
+  p {
+    font-size: 22px;
+    padding: 0px;
+  }
+  .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .btn button {
+    padding: 12px;
+    font-size: 12px;
+  }
+  #now-playing {
+    font-size: 12px;
+  }
+  .audio-player button {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=design.css.map */
