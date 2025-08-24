@@ -1,0 +1,157 @@
+
+// /* heading  */
+// h1{
+//     color: #A2AF9B;
+//     font-size: 96px;
+//     padding: 20px;
+// }
+
+// /* question part  */
+// p{
+//     font-size: 36px;
+//     padding: 20px;
+// }
+
+// /* mood buttons  */
+// .btn{
+//     padding: 20px;
+//     display: flex;
+//     gap: 10px;
+//     button{
+//         flex: 1;
+//     padding:  20px;
+//     font-size: 16px;
+//     background-color: #DCCFC0;
+//     border: none;
+//     }
+// }
+
+// /* audio player section */
+// .audio-player {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 10px;
+//     border-radius: 10px;
+// }
+
+//  /* audio player buttons + bar*/
+//  #now-playing{
+//     font-size: 16px;
+//     padding: 20px 0 10px 0;
+//     font-weight: 50;
+// }
+// .audio-player button {
+//     background: none;
+//     border: none;
+//     font-size: 24px;
+//     cursor: pointer;
+//     padding: 0 20px 0 20px ;
+// }
+// #audio {
+//     display: none; 
+// }
+// /* progress bar  */
+// #audio-player #progress {
+//     flex: 1;
+//     height: 5px;
+//     cursor: pointer;
+// }
+
+
+
+
+
+/* Define Variables */
+$max_tablet : 975px;
+$min_tablet : 760px;
+$BigText_tab : 72px;
+$pad_tab : 0px;
+$SmolText_tab : 28px;
+$btnPadding-tab : 14px;
+
+
+
+$max-L-Mobile : 760px;
+$min-L-Mobile : 500px;
+$BigText_LM : 48px;
+$pad_LM: 16px;
+$btnPadding-LM : 12px;
+
+$max-R-Mobile : 500px;
+$min-R-Mobile :360px;
+$BigText_RM : 32px;
+$SmolText_RM : 22px;
+$RM-gap:5px;
+$btn-text:12px;
+$audio-btn-font:18px;
+
+
+
+// ----------------------------------(RESPONSIVE)----------------------
+
+// .............................screen size 975px - 760px...................
+// ---------------------------------(TABLET_WIREFRAME)-------------------------------------
+@media (max-width: $max_tablet) and (min-width: $min_tablet){
+    h1{
+    font-size: $BigText_tab;
+    padding: $pad_tab ;
+    }
+    p{
+    font-size: $SmolText_tab;
+    }
+    .btn button{
+        padding: $btnPadding-tab;
+    }
+}
+
+// .............................screen size 760px - 500px...................
+// ------------------------------(LARGE_MOBILE_WIREFRAME)-------------------------------------
+
+@media (max-width: $max-L-Mobile) and (min-width: $min-L-Mobile ){
+    h1{
+    font-size: $BigText_LM ;
+    padding: $pad_LM ;
+    }
+    p{
+    font-size: $SmolText_tab;
+    padding: $pad_tab;
+    }
+    .btn button{
+        padding: $btnPadding-LM;
+    }
+}
+
+// .............................screen size 500px - and low...................
+// -----------------------------(REGULAR_MOBILE_WIREFRAME)-------------------------------------
+
+
+@media (max-width: $max-R-Mobile){
+    h1{
+    font-size: $BigText_RM ;
+    padding: $pad_LM ;
+    }
+    p{
+    font-size: $SmolText_RM;
+    padding: $pad_tab;
+    }
+    .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $RM-gap;
+    button{
+        padding: $btnPadding-LM;
+        font-size: $btn-text;
+    }}
+    #now-playing{
+        font-size: $btn-text;
+    }
+    .audio-player button {
+        font-size: $audio-btn-font;
+    }
+}
+
+
+// .............................screen size 360px - 360px...................
+// -----------------------------(REGULAR_MOBILE_WIREFRAME)-------------------------------------
+// @media (max-width: $max-R-Mobile) {
