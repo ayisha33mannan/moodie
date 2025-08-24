@@ -25,6 +25,9 @@
   }
 }
 @media (max-width: 500px) {
+  main {
+    margin-top: 20%;
+  }
   h1 {
     font-size: 32px;
     padding: 16px;
