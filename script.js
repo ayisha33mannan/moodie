@@ -107,28 +107,32 @@ const colorChange = () => {
             theme = {
                 background: "#2C3E50",     // Dark Blue/Grey
                 button: "#4e6175ff",        // Lighter Dark Blue
-                text: "#ECF0F1"           // Light Text
+                text: "#ECF0F1",           // Light Text
+                textOne :"#ECF0F1"      //audio text color
             };
             break;
         case "happy":
             theme = {
                 background: "#FFE3E1",     // Light Pink
                 button: "#fdbbcaff",        // Pink buttons
-                text: "#800020"           // Burgundy
+                text: "#800020",           // Burgundy
+                textOne :"#000000"      //audio text color
             };
             break;
         case "energetic":
             theme = {
                 background: "#FFF3B0",     // Light Yellow
                 button: "#F9C80E",        // Yellow buttons
-                text: "#5D2E8C"           // Purple
+                text: "#5D2E8C",         // Purple
+                textOne :"#000000"      //audio text color
             };
             break;
         case "relaxed":
             theme = {
                 background: "#C8E6C9",     // Light green
                 button: "#9fd5a1ff",        // Softer green
-                text: "#2E7D32"           // Deep green
+                text: "#2E7D32",           // Deep green
+                textOne :"#000000"         //audio text color
             };
             break;
     }
@@ -137,6 +141,7 @@ const colorChange = () => {
     document.body.style.backgroundColor = theme.background;
     heading.style.color = theme.text;
     quest.style.color = theme.text;
+    nowPlaying.style.color = theme.textOne; 
 
     // Apply theme on buttons   
     moodButtons.forEach(btn => {
